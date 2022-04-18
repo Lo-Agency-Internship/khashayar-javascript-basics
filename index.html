@@ -7,7 +7,23 @@
     <title>JavaScript assignment</title>
   </head>
   <body>
-    <div id="input-div"></div>
+    <h1>Submit form</h1>
+    <div id="parent-div">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <label for="lastname">Lastname:</label>
+      <input type="text" id="lastname" name="lastname" />
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" />
+      <input type="radio" id="female" value="female" name="sex" />
+      <label for="female">Female</label>
+      <input type="radio" id="male" value="male" name="sex" />
+      <label for="male">Male</label>
+      <input type="radio" id="others" value="others" name="sex" />
+      <label for="others">Others</label>
+
+      <input id="btn" type="submit" value="Submit" onclick="btnClick()" />
+    </div>
 
     <script src="script.js"></script>
   </body>
