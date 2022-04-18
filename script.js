@@ -1,13 +1,23 @@
-const div = document.getElementById("input-div");
+let sex;
+function radioChecked() {
+  var radios = document.getElementsByName("sex");
 
-let tag = document.createElement("input");
-let btn = document.createElement("button");
-btn.innerText = "Submit";
-btn.addEventListener("click", btnClick);
-div.appendChild(tag);
-div.appendChild(btn);
-
+  for (const radio of radios) {
+    if (radio.checked) sex = radio.value;
+  }
+}
 function btnClick() {
-  console.log(document.querySelector("input").value);
-  alert(document.querySelector("input").value);
+  const name = document.getElementById("name");
+  const lastname = document.getElementById("lastname");
+  const age = document.getElementById("age");
+  radioChecked();
+  alert(name.value + " " + lastname.value + " " + age.value + " " + sex);
+  let numA = prompt("Please enter a numbre,A");
+  let a = numA;
+  let numB = prompt("Please enter a numbre,B");
+  let b = numB;
+  alert("A =" + a + " " + "B =" + b);
+  b = numA;
+  a = numB;
+  alert("A =" + a + " " + "B =" + b);
 }
