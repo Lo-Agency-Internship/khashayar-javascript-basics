@@ -21,3 +21,14 @@ function btnClick() {
   a = numB;
   alert("A =" + a + " " + "B =" + b);
 }
+
+prevRand = 1;
+function rand(min = 0, max = 10) {
+  time = Date.now();
+  rand = (time / (prevRand + 1)) % max;
+  if (rand < min) {
+    rand += min;
+  }
+  prevRand = rand;
+  return parseInt(rand);
+}
