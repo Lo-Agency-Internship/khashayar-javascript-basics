@@ -32,3 +32,11 @@ function rand(min = 0, max = 10) {
   prevRand = rand;
   return parseInt(rand);
 }
+
+function bin2dec(string) {
+  let dec = 0;
+  for (let i = 0; i < string.length; i++) {
+    dec += string[i] * 2 ** (string.length - i - 1);
+  }
+  return dec;
+}
