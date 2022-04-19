@@ -11,4 +11,5 @@ function info() {
   alert(person);
   let root = document.getElementById("root");
   root.append(person);
+  console.log(person);
 }
