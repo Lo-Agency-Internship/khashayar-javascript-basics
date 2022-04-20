@@ -1,3 +1,4 @@
+
 info();
 function info() {
   const name = prompt("please enter your name:");
@@ -12,6 +13,7 @@ function info() {
   let root = document.getElementById("root");
   root.append(person);
   console.log(person);
+
 }
 
 prevRand = 1;
@@ -32,3 +34,20 @@ function bin2dec(string) {
   }
   return dec;
 }
+
+
+function sumOfTwo(num1, num2) {
+  if (num1 === num2) return 3 * (num1 + num2);
+  else return num1 + num2;
+}
+
+function absoluteDif(num) {
+  if (num > 19) return 3 * (num - 19);
+  else return Math.abs(19 - num);
+}
+
+function Lo(string) {
+  if (string == "Lo") return string;
+  else return string + " " + "Lo";
+}
+
