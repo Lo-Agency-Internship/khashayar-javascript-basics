@@ -1,4 +1,3 @@
-
 info();
 function info() {
   const name = prompt("please enter your name:");
@@ -13,7 +12,6 @@ function info() {
   let root = document.getElementById("root");
   root.append(person);
   console.log(person);
-
 }
 
 prevRand = 1;
@@ -35,7 +33,6 @@ function bin2dec(string) {
   return dec;
 }
 
-
 function sumOfTwo(num1, num2) {
   if (num1 === num2) return 3 * (num1 + num2);
   else return num1 + num2;
@@ -51,3 +48,44 @@ function Lo(string) {
   else return string + " " + "Lo";
 }
 
+
+function logicalGateBuffer(op) {
+  return op
+}
+function logicalGateNot(op) {
+  return !op;
+}
+function logicalGateAnd(op1, op2) {
+  if (op1 === true && op2 ===true) {
+    return true;
+  }
+  else return false;
+}
+function logicalGateOr(op1, op2) {
+  if (op1 === false && op2 === false) {
+    return false;
+  }
+  else return true;
+}
+function logicalGateNand(op1, op2) {
+  if (op1 === true && op2 ===true) {
+    return false;
+  }
+  else return false;
+}
+function logicalGateNor(op1, op2) {
+  if (op1 === false && op2 === false) {
+    return true;
+  }
+  else return false;
+}
+function logicalGateXor(op1, op2) {
+  if(op1 === false && op2 === false) return false;
+  else if (op1 === true && op2 === true) return false;
+  else return true;
+}
+function logicalGateXnor(op1, op2) {
+  if(op1 === false && op2 === false) return true;
+  else if (op1 === true && op2 === true) return true;
+  else return false;
+}
