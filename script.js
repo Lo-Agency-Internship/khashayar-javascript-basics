@@ -48,44 +48,54 @@ function Lo(string) {
   else return string + " " + "Lo";
 }
 
-
 function logicalGateBuffer(op) {
-  return op
+  return op;
 }
 function logicalGateNot(op) {
   return !op;
 }
 function logicalGateAnd(op1, op2) {
-  if (op1 === true && op2 ===true) {
+  if (op1 === true && op2 === true) {
     return true;
-  }
-  else return false;
+  } else return false;
 }
 function logicalGateOr(op1, op2) {
   if (op1 === false && op2 === false) {
     return false;
-  }
-  else return true;
+  } else return true;
 }
 function logicalGateNand(op1, op2) {
-  if (op1 === true && op2 ===true) {
+  if (op1 === true && op2 === true) {
     return false;
-  }
-  else return false;
+  } else return false;
 }
 function logicalGateNor(op1, op2) {
   if (op1 === false && op2 === false) {
     return true;
-  }
-  else return false;
+  } else return false;
 }
 function logicalGateXor(op1, op2) {
-  if(op1 === false && op2 === false) return false;
+  if (op1 === false && op2 === false) return false;
   else if (op1 === true && op2 === true) return false;
   else return true;
 }
 function logicalGateXnor(op1, op2) {
-  if(op1 === false && op2 === false) return true;
+  if (op1 === false && op2 === false) return true;
   else if (op1 === true && op2 === true) return true;
   else return false;
+}
+
+function factorielRecursive(num) {
+  if (num === 0) return 1;
+  else return num * factorielRecursive(num - 1);
+}
+function factorielIterative(num) {
+  if (num === 0) return 1;
+  else {
+    let sum = 1;
+    for (i = 1; i <= num; i++) {
+      sum *= i;
+    }
+  }
+  return sum;
 }
