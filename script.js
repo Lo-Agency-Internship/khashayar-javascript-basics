@@ -85,15 +85,15 @@ function logicalGateXnor(op1, op2) {
   else return false;
 }
 
-function factorielRecursive(num) {
+function factorielRecursive(x) {
   if (num === 0) return 1;
-  else return num * factorielRecursive(num - 1);
+  else return x * factorielRecursive(x - 1);
 }
-function factorielIterative(num) {
-  if (num === 0) return 1;
+function factorielIterative(x) {
+  if (x === 0) return 1;
   else {
     let sum = 1;
-    for (i = 1; i <= num; i++) {
+    for (i = 1; i <= x; i++) {
       sum *= i;
     }
   }
