@@ -86,7 +86,7 @@ function logicalGateXnor(op1, op2) {
 }
 
 function factorielRecursive(x) {
-  if (num === 0) return 1;
+  if (x === 0) return 1;
   else return x * factorielRecursive(x - 1);
 }
 function factorielIterative(x) {
