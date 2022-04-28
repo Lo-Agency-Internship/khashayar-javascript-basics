@@ -115,9 +115,11 @@ function costumFilter(arr, callback) {
   return resArr;
 }
 function costumReduce(arr, callback) {
-  let ans = 0;
+  let ans = [];
   for (let i = 0; i < arr.length; i++) {
-    ans = callback(arr[i], ans);
+    ans.concat(callback(arr[i], ans));
   }
-  return ans;
+  if (ans.length > 1) return ans;
+  else if (ans.length === 1) return ans[0];
+  else return ans;
 }
