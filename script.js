@@ -99,3 +99,25 @@ function factorielIterative(x) {
   }
   return sum;
 }
+
+function costumMap(arr, callback) {
+  const resArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    resArr.push(callback(arr[i], i));
+  }
+  return resArr;
+}
+function costumFilter(arr, callback) {
+  const resArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (callback(arr[i]) === true) resArr.push(arr[i]);
+  }
+  return resArr;
+}
+function costumReduce(arr, callback) {
+  let ans = 0;
+  for (let i = 0; i < arr.length; i++) {
+    ans = callback(arr[i], ans);
+  }
+  return ans;
+}
