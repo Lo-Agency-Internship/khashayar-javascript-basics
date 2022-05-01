@@ -99,27 +99,36 @@ function factorielIterative(x) {
   }
   return sum;
 }
+const randArr = [];
+const randGen = (min, max) => {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min) + min);
+};
+randArr.push(randGen(15, 50));
+randArr.push(randGen(15, 50));
+randArr.push(randGen(15, 50));
+randArr.push(randGen(15, 50));
 
-function costumMap(arr, callback) {
+function customMap(arr, callback) {
   const resArr = [];
   for (let i = 0; i < arr.length; i++) {
     resArr.push(callback(arr[i], i));
   }
   return resArr;
 }
-function costumFilter(arr, callback) {
+function customFilter(arr, callback) {
   const resArr = [];
   for (let i = 0; i < arr.length; i++) {
     if (callback(arr[i]) === true) resArr.push(arr[i]);
   }
   return resArr;
 }
-function costumReduce(arr, callback) {
-  let ans = [];
-  for (let i = 0; i < arr.length; i++) {
-    ans.concat(callback(arr[i], ans));
+
+function customReduce(arr, callback) {
+  let ans = arr[0];
+  for (let i = 1; i < arr.length; i++) {
+    ans = callback(ans, arr[i]);
   }
-  if (ans.length > 1) return ans;
-  else if (ans.length === 1) return ans[0];
-  else return ans;
+  return ans;
 }
