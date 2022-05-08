@@ -153,9 +153,14 @@ class Media{
   }
 
   getAverageRating(){
-    let sum =0;
-    let length = this.ratings.length
-    this.ratings.forEach(rate => sum+=rate)
+    // let sum =0;
+    // let length = this.ratings.length
+    // this.ratings.forEach(rate => sum+=rate)
+    // return sum/length;
+    let sum = this.ratings.reduce((pv,cv)=>{
+      pv + cv
+    },0)
+    let length = this.ratings.length;
     return sum/length;
   }
 
