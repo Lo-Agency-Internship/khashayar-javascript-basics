@@ -132,3 +132,90 @@ function customReduce(arr, callback) {
   }
   return ans;
 }
+
+
+class Media{
+  #title = ""
+  constructor(title ="",isChekedOut =false,ratings=[]){
+    this.title =title;
+    this.isChekedOut = isChekedOut;
+    this.ratings=[...ratings];
+  }
+
+  get getCheckStatus(){
+    return this.isChekedOut;
+  }
+  get getTitle(){
+    return this.title;
+  }
+  get getRating(){
+    return this.ratings;
+  }
+
+  getAverageRating(){
+    let sum =0;
+    let length = this.ratings.length
+    this.ratings.forEach(rate => sum+=rate)
+    return sum/length;
+  }
+
+  toggleCheckOutStatus(isChekedOut){
+    return !isChekedOut;
+  }
+
+  addRating(num){
+    this.ratings.push(num);
+  }
+
+
+}
+
+class Book extends Media{
+  constructor(author="",title ="",pages=0,isChekedOut =false,ratings=[]){
+    super(title,isChekedOut,ratings)
+    this.author=author;
+    this.pages=pages;
+  }
+  get getAuthor(){
+    return this.author;
+  }
+  get getPages(){
+    return this.pages;
+  }
+
+
+}
+
+class Movie extends Media{
+  constructor(director="",title ="",runTime=0,isChekedOut =false,ratings=[]){
+    super(title,isChekedOut,ratings)
+    this.director=director;
+    this.runTime=runTime;
+  }
+  get getDirector(){
+    return this.director;
+  }
+  get getRunTime(){
+    return this.runTime;
+  }
+}
+
+class CD extends Media{
+  constructor(artist="",title ="",isChekedOut =false,ratings=[],songs=[]){
+    super(title,isChekedOut,ratings)
+    this.artist=artist;
+    this.songs=[...songs]
+
+  }
+  get getArtist(){
+    return this.artist;
+  }
+  get getSongs(){
+    return this.songs;
+  }
+  
+}
+
+
+const b = new Book("Khashayar");
+console.log(b.getAuthor)
