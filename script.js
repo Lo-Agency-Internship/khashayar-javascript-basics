@@ -157,9 +157,15 @@ class Media{
     // let length = this.ratings.length
     // this.ratings.forEach(rate => sum+=rate)
     // return sum/length;
-    let sum = this.ratings.reduce((pv,cv)=>{
-      pv + cv
+    let sum = this.ratings.reduce((pv,cv,idx)=>{
+      
+      
+      if(idx===this.ratings.length-1){
+        return (pv + cv)/idx+1
+      }
+      return pv + cv
     },0)
+    
     let length = this.ratings.length;
     return sum/length;
   }
@@ -223,4 +229,5 @@ class CD extends Media{
 
 
 const b = new Book("Khashayar");
-console.log(b.getAuthor)
+var s = "baz";
+console.log(valueOf(String))
